@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Variable name</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        /* Напишите, являются ли данные имена переменных
+        корректными: */
+
+        /* В JavaScript есть два ограничения, касающиеся имён переменных:
+             1. Имя переменной должно содержать только буквы, цифры или символы $ и _.
+             2. Первый символ не должен быть цифрой. */
+
+        let mode = "normal";        // да
+        let my_valu3 = 102;         // да
+        let 3my_value3 = "102";     // нет, первый символ не должен быть цифрой
+        let !0_world = true;        // нет, имя переенной не может содержать спецсимволы
+        let __hello__ = "world";    // да
+        let $$$ = "money";          // да
+    </script>
+</body>
+</html>

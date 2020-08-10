@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        let result1 = 10 + 10 + "10";
+        let result2 = 10 + "10" + 10;
+        let result3 = 10 + 10 + +"10";
+        let result4 = 10 / -"";
+        let result5 = 10 / +"2,5";
+        console.log(result1); 
+        console.log(result2); 
+        console.log(result3); 
+        console.log(result4); 
+        console.log(result5);
+        /*  1. складываем 10 плюс 10 получаем 20 и выполняем конкатенацию с оставшейся 10   
+            2. 101010 конкатенация присваиваем в переменную result2
+            3. Сначала выполняется приведение "10" к числу (унарный плюс(приоритет 16)), а затем сложение (приоритет 14)
+            4. Пустая строка приводится к нулю, получаем частоное 10 на минус 0, результат минус бесконечность
+            5. Возвращает NaN, сначала пытается привести "2,5" к числу неудачно (получаем NaN), так как в качестве разделителя используется ","
+               (если поставить ".", вернет 4), и при попытки разделить число на NaN получаем NaN
+        */
+    </script>
+</body>
+</html>
