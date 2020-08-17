@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Перед вами находится массив с продуктами, сегодня распродажа и вам нужно на каждый товар применить скидку
+        15%, можете использовать метод forEach https://mzl.la/1AOMMWX */
+        const products = [
+            {
+                id: 3,
+                price: 200,
+            },
+            {
+                id: 4,
+                price: 900,
+            },
+            {
+                id: 1,
+                price: 1000,
+            },
+        ];
+
+        /*** один вариант (с изменение массива) ***/
+/*      products.forEach(function(prod) {
+            prod.price -= prod.price * 0.15;
+            console.log(prod.price);
+        }); */
+
+        /*** другой вариант с map ***/
+/*      const discount = products.map(function(prod) {
+            return prod.price - prod.price * 0.15;
+        });
+        console.log(discount); */
+
+        /*** вариант с ссылочной функцией ***/
+        products.forEach(prod => console.log(prod.price + ' руб. с учетом скибки (15%) ' + (prod.price - prod.price * 0.15) + ' руб.'));
+    </script>
+</body>
+</html>
