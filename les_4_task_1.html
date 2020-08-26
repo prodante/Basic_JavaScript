@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        function Post(number) {
+            this.units = number % 10;
+            this.tens = Math.floor((number % 100) / 10);
+            this.hundreds = Math.floor((((number % 1000) / 10) % 100) / 10);
+        }
+
+        Post.prototype.show = function () {
+            console.log(`Еденицы: ${this.units}\nДесятки: ${this.tens}\nСотни: ${this.hundreds}`);
+        }
+        
+        let number = 99;
+        try {
+            if (!Number.isInteger(number) || String(number).length > 3) { 
+                throw new Error("Не правильный формат данных, должно\nбыть целое число не более 999!");
+            }
+        } catch(error) {
+            error.name = "Ошибка";
+            alert(error);
+        } finally {
+            const post1 = new Post(number);
+            post1.show();
+        }
+    </script>
+</body>
+</html>
