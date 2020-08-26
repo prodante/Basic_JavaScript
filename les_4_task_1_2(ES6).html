@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+/************************** ES6 ********************************************/
+        // родительский класс Post 
+        class Post {
+            constructor(author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+        
+            edit(sayText) {
+                this.text = sayText;
+            }
+
+            show() {
+                alert(this.author + " say: " + this.text + " date: " + this.date);
+            }
+        }
+        
+        // класс наследник AttachedPost
+        class AttachedPost extends Post {
+            constructor(author, text, date, highlighted = false) {
+                super(author, text, date);    
+                this.highlighted = highlighted;
+            }
+
+            TrueHighlighted() {
+                this.highlighted = true;
+            }
+        }
+
+        /**************************************************************************/
+        const post1 = new Post('Admin', 'lorem ipsum1 Admin', '2020-08-20');
+        console.log(post1);
+        post1.edit('Say Admin lorem ipsum1');
+        debugger;
+        post1.show();
+
+        /**************************************************************************/
+        const AttachedPost1 = new AttachedPost('John', 'male Canada swimming', '2020-08-20');
+        console.log(AttachedPost1);
+        AttachedPost1.show();
+        debugger;
+        AttachedPost1.TrueHighlighted();
+        console.log(AttachedPost1);
+        debugger;
+
+    </script>
+</body>
+</html>
